@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Editrix — Login</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <div class="container">
+    <nav><div class="brand"><div class="logo"><img src="images/logo.png" alt="logo" style="width:36px;height:36px;border-radius:6px"></div><div><h1>Editrix</h1></div></div><div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="videos.html">Videos</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div><div id="hamburger" class="hamburger">☰</div></nav>
+
+    <header style="padding-top:22px;"><h2>Admin Login</h2><p class="lead">Demo login — client-side only</p></header>
+
+    <section>
+      <div style="max-width:420px;margin:auto">
+        <form onsubmit="doDemoLogin(event)" style="display:grid;gap:10px">
+          <input id="loginEmail" type="email" placeholder="admin@editrix.com" value="admin@editrix.com" required>
+          <input id="loginPass" type="password" placeholder="Pass1234" value="Pass1234" required>
+          <div style="display:flex;gap:8px">
+            <button class="btn-primary btn" type="submit">Sign in</button>
+            <a class="btn" href="index.html">Back</a>
+          </div>
+          <div id="loginResult" style="margin-top:8px;color:var(--muted)"></div>
+        </form>
+      </div>
+    </section>
+    <footer style="margin-top:18px"><a href="index.html">← Back to Home</a></footer>
+  </div>
+
+  <script src="script.js"></script>
+</body></html>

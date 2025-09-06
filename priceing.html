@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Editrix — Pricing</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <div class="container">
+    <nav><div class="brand"><div class="logo"><img src="images/logo.png" alt="logo" style="width:36px;height:36px;border-radius:6px"></div><div><h1>Editrix</h1></div></div><div class="nav-links"><a href="index.html">Home</a><a href="services.html">Services</a><a href="videos.html">Videos</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a><a class="btn" onclick="openModal('loginModal')">Login</a></div><div id="hamburger" class="hamburger">☰</div></nav>
+
+    <header style="padding-top:22px;"><h2 class="reveal">Pricing & Packages</h2><p class="lead">Transparent pricing — pick a package and reserve via form.</p></header>
+
+    <section>
+      <div class="section-title"><h3>À la carte</h3></div>
+      <div class="grid pricing-grid">
+        <div class="price-card">
+          <div style="font-weight:900">1 × 1min Reel</div>
+          <div class="price">₹400</div>
+          <div style="margin-top:10px"><button class="btn-primary btn" onclick="openBuyModal('1 × 1min Reel','₹400')">Buy</button></div>
+        </div>
+
+        <div class="price-card">
+          <div style="font-weight:900">1 × Thumbnail</div>
+          <div class="price">₹400</div>
+          <div style="margin-top:10px"><button class="btn-primary btn" onclick="openBuyModal('1 × Thumbnail','₹400')">Buy</button></div>
+        </div>
+
+        <div class="price-card">
+          <div style="font-weight:900">1 × Cover</div>
+          <div class="price">₹200</div>
+          <div style="margin-top:10px"><button class="btn-primary btn" onclick="openBuyModal('1 × Cover','₹200')">Buy</button></div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px" class="section-title"><h3>Combo</h3></div>
+      <div class="grid pricing-grid">
+        <div class="price-card">
+          <div style="font-weight:900">2 Reels / 3 Thumbnails / 5 Covers</div>
+          <div class="price">₹800</div>
+          <div style="margin-top:10px"><button class="btn-primary btn" onclick="openBuyModal('2 Reels / 3 Thumbnails / 5 Covers','₹800')">Buy</button></div>
+        </div>
+
+        <div class="price-card" style="border:2px solid var(--accent)">
+          <div style="font-weight:900">Ultimate Content Strategy</div>
+          <div class="price">₹3999</div>
+          <div style="color:var(--muted);margin-top:8px">Includes: Logo + Account Design + 1 month content plan</div>
+          <div style="margin-top:10px"><button class="btn-primary btn" onclick="openBuyModal('Ultimate Content Strategy','₹3999')">Buy</button></div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="margin-top:18px"><a href="index.html">← Back to Home</a></footer>
+  </div>
+
+  <!-- Buy modal (shared) -->
+  <div id="buyModal" class="modal">
+    <div class="panel">
+      <button style="float:right;background:transparent;border:0;color:var(--muted);cursor:pointer" onclick="closeModal('buyModal')">✕</button>
+      <h3 id="buyTitle">Reserve Plan</h3>
+      <p id="buySubtitle" style="color:var(--muted)">Enter details to reserve this plan. Promo code: EDITRIX80</p>
+
+      <form onsubmit="submitBuyForm(event)" style="margin-top:12px;display:grid;gap:10px">
+        <input id="buyName" placeholder="Your name" required>
+        <input id="buyEmail" type="email" placeholder="Your email" required>
+        <input id="buyPhone" placeholder="Phone number" required>
+        <input id="buyPlan" readonly style="background:rgba(255,255,255,.02);color:#fff">
+        <input id="buyPrice" readonly style="background:rgba(255,255,255,.02);color:#fff">
+        <div style="display:flex;gap:10px">
+          <button class="btn-primary btn" type="submit">Send Reservation</button>
+          <button class="btn" type="button" onclick="closeModal('buyModal')">Cancel</button>
+        </div>
+        <div id="buyStatus" style="margin-top:8px;color:var(--muted)"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.emailjs.com/sdk/3.6.2/email.min.js"></script>
+  <script src="script.js"></script>
+</body></html>

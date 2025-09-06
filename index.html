@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Editrix — Editing Means Editrix • Gurjot x Editrix</title>
+  <link rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand">
+        <div class="logo"><img src="images/logo.png" alt="logo" style="width:36px;height:36px;border-radius:6px"></div>
+        <div><h1>Editrix</h1><div style="color:var(--muted);font-size:13px">Editing Means Editrix — Gurjot x Editrix</div></div>
+      </div>
+
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="videos.html">Videos</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+        <a class="btn" onclick="openModal('loginModal')">Login</a>
+      </div>
+
+      <div id="hamburger" class="hamburger">☰</div>
+      <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
+        <a href="index.html">Home</a><br>
+        <a href="services.html">Services</a><br>
+        <a href="videos.html">Videos</a><br>
+        <a href="pricing.html">Pricing</a><br>
+        <a href="contact.html">Contact</a><br>
+        <a href="#" onclick="openModal('loginModal')">Login</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div>
+        <div class="badge">⚡ Fast • Creative • Professional</div>
+        <h2 class="reveal">Editing Means Editrix — <span style="color:var(--accent)">Gurjot x Editrix</span></h2>
+        <p class="lead reveal delay">I craft attention-grabbing Reels, high-CTR thumbnails, brand identity and social-first visuals that grow your audience.</p>
+        <div class="cta reveal delay">
+          <a class="btn-primary btn" href="contact.html">Start a Project</a>
+          <a class="btn" href="pricing.html">Pricing & Packs</a>
+          <a class="btn" href="videos.html">Watch Videos</a>
+        </div>
+      </div>
+
+      <div class="reveal delay">
+        <img src="images/hero.jpg" alt="Editing desk" style="width:100%;border-radius:12px;box-shadow:var(--shadow)">
+      </div>
+    </header>
+
+    <section id="work">
+      <div class="section-title"><h3>Selected Work</h3><div style="color:var(--muted)">Replace with your real images</div></div>
+      <div class="grid portfolio-grid">
+        <div class="proj"><img src="images/work1.jpg" alt=""><div class="meta">Reel — Fitness</div></div>
+        <div class="proj"><img src="images/work2.jpg" alt=""><div class="meta">Thumbnail — Tech</div></div>
+        <div class="proj"><img src="images/work3.jpg" alt=""><div class="meta">Poster — Event</div></div>
+        <div class="proj"><img src="images/work4.jpg" alt=""><div class="meta">Logo — Cafe</div></div>
+        <div class="proj"><img src="images/work5.jpg" alt=""><div class="meta">YouTube — Vlog</div></div>
+        <div class="proj"><img src="images/work6.jpg" alt=""><div class="meta">Brand Kit</div></div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <strong>Editrix</strong><div style="color:var(--muted);font-size:13px">Gurjot Singh — editrix.ji@gmail.com</div>
+      </div>
+      <div>
+        <a href="https://instagram.com/editrix_ji" target="_blank" style="color:var(--accent)">Instagram</a>
+        <a href="https://www.youtube.com/@editrix_ji" target="_blank" style="color:var(--accent);margin-left:12px">YouTube</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Discount modal -->
+  <div id="discountModal" class="modal">
+    <div class="panel">
+      <button style="float:right;background:transparent;border:0;color:var(--muted);cursor:pointer" onclick="closeModal('discountModal')">✕</button>
+      <h2 style="margin:0">Limited Offer — 80% OFF</h2>
+      <p style="color:var(--muted)">Use code <strong>EDITRIX80</strong> at checkout. Reserve your slot now.</p>
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:12px">
+        <button class="btn-primary btn" onclick="location.href='pricing.html'">See Plans</button>
+        <button class="btn" onclick="closeModal('discountModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login modal & Admin modal reused across pages -->
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="panel" style="max-width:420px">
+      <button style="float:right;background:transparent;border:0;color:var(--muted);cursor:pointer" onclick="closeModal('loginModal')">✕</button>
+      <h3>Admin Login (Demo)</h3>
+      <div style="color:var(--muted);font-size:13px;margin-bottom:8px">Demo: admin@editrix.com / Pass1234</div>
+      <form onsubmit="doDemoLogin(event)" style="display:grid;gap:8px">
+        <input id="loginEmail" type="email" required placeholder="admin@editrix.com" value="admin@editrix.com">
+        <input id="loginPass" type="password" required placeholder="Pass1234" value="Pass1234">
+        <div style="display:flex;gap:8px">
+          <button class="btn-primary btn" type="submit">Sign In</button>
+          <button class="btn" type="button" onclick="closeModal('loginModal')">Cancel</button>
+        </div>
+        <div id="loginResult" style="margin-top:8px;color:var(--muted)"></div>
+      </form>
+    </div>
+  </div>
+
+  <div id="adminModal" class="modal" aria-hidden="true">
+    <div class="panel" style="width:min(1000px,98%);max-height:90vh;overflow:auto">
+      <button style="float:right;background:transparent;border:0;color:var(--muted);cursor:pointer" onclick="closeModal('adminModal')">✕</button>
+      <h3>Admin Dashboard (Local Demo)</h3>
+      <div style="display:flex;gap:12px;margin-top:8px">
+        <div style="flex:1">
+          <div style="font-weight:900;margin-bottom:8px">Messages</div>
+          <div id="adminMessages" class="admin-panel">Loading…</div>
+        </div>
+        <div style="width:360px">
+          <div style="font-weight:900;margin-bottom:8px">Chats</div>
+          <div id="adminChats" class="admin-panel">Loading…</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;color:var(--muted)">Data is stored locally in browser (for demo). Use Firebase for production.</div>
+    </div>
+  </div>
+
+  <!-- Chat & WhatsApp -->
+  <button id="chatToggle" class="chat-btn">Chat</button>
+  <div id="chatWindow" class="chat-window" aria-hidden="true">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div><strong>Editrix Chat</strong><div style="font-size:12px;color:var(--muted)">Quick message</div></div>
+      <button onclick="toggleChat()" style="background:transparent;border:0;color:var(--muted);cursor:pointer">✕</button>
+    </div>
+    <div id="chatMessages" class="chat-messages" style="margin-top:8px"></div>
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <input id="chatInput" placeholder="Type a short message" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.04);background:transparent;color:#fff">
+      <button class="btn-primary btn" onclick="sendChat()">Send</button>
+    </div>
+  </div>
+
+  <a class="whatsapp" href="https://wa.me/0000000000" target="_blank" rel="noopener">WhatsApp</a>
+
+  <script src="https://cdn.emailjs.com/sdk/3.6.2/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
